@@ -30,9 +30,10 @@ pipeline {
         }
       }
     }
-    stage('') {
+    stage('Example4') {
       steps {
-        mail(subject: 'Jenkins', body: 'Hello World!', to: 'wojciech.konsek@bright-it.com')
+        sh '''echo "This is another thing"
+'''
       }
     }
   }
