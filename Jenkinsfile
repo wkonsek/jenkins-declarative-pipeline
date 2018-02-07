@@ -16,8 +16,17 @@ pipeline {
       }
     }
     stage('Example2') {
-      steps {
-        echo 'Example2 step '
+      parallel {
+        stage('Example2') {
+          steps {
+            echo 'Example2 step '
+          }
+        }
+        stage('Hello') {
+          steps {
+            sh 'cat /etc/issue'
+          }
+        }
       }
     }
   }
