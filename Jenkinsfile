@@ -1,5 +1,5 @@
-pipipeline {
-    agent {label 'master'}
+pipeline {
+    agent { label 'master'}
     stages {
         stage('Example') {
             steps {
