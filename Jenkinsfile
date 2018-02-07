@@ -17,7 +17,9 @@ pipeline {
     }
     stage('Example2') {
       steps {
-        echo 'Example2 step '
+        echo 'Example2 step'
+        checkout scm
+        sh 'cat file'
       }
     }
   }
