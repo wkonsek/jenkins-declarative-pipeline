@@ -25,6 +25,7 @@ pipeline {
         stage('Example3') {
           steps {
             sh 'echo "example 2 from docker"'
+            sh 'exit 1'
           }
         }
       }
