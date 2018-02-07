@@ -25,9 +25,14 @@ pipeline {
         stage('Example3') {
           steps {
             sh 'echo "example 2 from docker"'
-            sh 'exit 1'
+            sh 'exit 0'
           }
         }
+      }
+    }
+    stage('') {
+      steps {
+        mail(subject: 'Jenkins', body: 'Hello World!', to: 'wojciech.konsek@bright-it.com')
       }
     }
   }
