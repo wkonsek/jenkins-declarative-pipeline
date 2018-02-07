@@ -22,7 +22,7 @@ pipeline {
             echo 'Example2 step '
           }
         }
-        stage('') {
+        stage('error') {
           steps {
             sh 'echo "example 2 from docker"'
           }
