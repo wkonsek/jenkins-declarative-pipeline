@@ -15,5 +15,19 @@ pipeline {
         
       }
     }
+    stage('Example2') {
+      parallel {
+        stage('Example2') {
+          steps {
+            echo 'Example2 step '
+          }
+        }
+        stage('') {
+          steps {
+            sh 'echo "example 2 from docker"'
+          }
+        }
+      }
+    }
   }
 }
