@@ -1,3 +1,6 @@
+@Library('slack')
+import slack.Slack
+
 pipeline {
   agent {
     label 'master'
@@ -10,8 +13,6 @@ pipeline {
           def browsers = ['chrome', 'firefox']
           for (int i = 0; i < browsers.size(); ++i) {
             echo "Testing the ${browsers[i]} browser"
-            @Library('slack')
-            import slack.Slack
             Slack slack = new Slack();
             slack.sendNotification('ok');
 
