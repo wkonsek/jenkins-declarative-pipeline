@@ -36,5 +36,15 @@ pipeline {
 '''
       }
     }
+    stage('Script') {
+      steps {
+        script {
+          def sky = 'blue'
+          if(sky == 'blue'){
+            println('The sky is blue')}
+          }
+          
+        }
+      }
+    }
   }
-}
