@@ -13,10 +13,12 @@ pipeline {
           def browsers = ['chrome', 'firefox']
           for (int i = 0; i < browsers.size(); ++i) {
             echo "Testing the ${browsers[i]} browser"
-            Slack slack = new Slack();
-          slack.sendNotification('start');
+            
+          
 
           }
+          Slack slack = new Slack();
+          slack.sendNotification('start')
         }
         
       }
@@ -31,6 +33,9 @@ pipeline {
         stage('Example3') {
           steps {
             sh 'echo "example 2 from docker"'
+            script {
+              Slack slack = new Slack();
+              slack.sendNotification('ok')}
           }
         }
       }
