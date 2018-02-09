@@ -14,7 +14,7 @@ pipeline {
           for (int i = 0; i < browsers.size(); ++i) {
             echo "Testing the ${browsers[i]} browser"
             Slack slack = new Slack();
-            slack.sendNotification('ok');
+          slack.sendNotification('start');
 
           }
         }
